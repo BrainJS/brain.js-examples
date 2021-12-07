@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cat Dog Classifier</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="A simple app that classifies an image as a cat or a dog with use of Feedforward Neural Network (FNN).">
+        <meta name="keywords" content="BrainJS, Brain.js, AI, Neural Network, FNN, Feedforward Neural Network, Cat Dog Classifier in JS, JavaScript ML, JavaScript AI, JavaScript, HTML, CSS">
+        <meta name="author" content="Michał Antropik">
+    </head>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        header {
+            background: #333;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-weight: bold;
+        }
+
+        .title {
+            display: contents;
+
+            text-align: center;
+            color: #f4df49;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            height: calc(100vh - 80px);
+            background: #eee;
+        }
+
+        .content-wrapper {
+            width: 290px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        .status-text {
+            margin: 75px 0 50px;
+        }
+
+        .dynamic-text {
+            color: #222;
+            text-shadow: 2px 2px 3px #f4df49;
+        }
+
+        #image-file-input {
+            margin: 0;
+        }
+
+        #uploaded-image {
+            width: 200px;
+            height: 200px;
+            margin: 40px auto;
+        }
+
+        .text-under-image {
+            margin: 0;
+
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cat or Dog Detection</title>
+    </head>
+    <body>
+        <header><h1 class="title">Cat or Dog?</h1></header>
+        <main class="content">
+            <div class="content-wrapper">
+                <p class="status-text">Neural Network Status:&nbsp; <span class="dynamic-text" id="status">still training...</span></p>
+                <input id="image-file-input" type="file" accept="image/*" onchange="handleImageFileInput(event)" disabled>
+                <img id="uploaded-image" src="./images/brainjs-logo.jpg" alt="">
+                <p class="text-under-image">Here is your answer:<br/><strong><i class="dynamic-text" id="answer">I don't know yet</i></strong></p>
+            </div>
+
+        </main>
+    </body>
+
+
+    <script type="text/javascript" src="https://unpkg.com/brain.js"></script>
+    <!-- Uncomment the script below to use the pretrainedModel -->
+    <!-- <script type="text/javascript" src="./pretrained-model.js"></script> -->
+    <script type="text/javascript">
+        const numberOfImages = 50;
+
+        const trainingOptions =  {
+            iterations: 1000,
+            errorThresh: 0.05,
+            learningRate: 0.001,
+            momentum: 0.95,
+            log: true,
+            logPeriod: 5,
+        };
+
+        let network = new brain.NeuralNetwork({ 
+            activation: 'sigmoid',
+            hiddenLayers: [2],
+            learningRate: 0.001,
+        });
+
+        let catsTrainableData = [];
+        let dogsTrainableData = [];
+        let trainedModel;
+
+        /* Uncomment to use the pretrainedModel */
+        // network.fromJSON(pretrainedModelJSON);
+
+
+        function getGrayscaleImageMatrix(url, x, y) {
+
+            // Matrix solution: [[]]
+            // Linear solution: []
+            // Object solution: {}
+            let grayscaleData = [];
+
+            return new Promise((resolve, reject) => {
+                // The images in repository are 120px by 120px
+                const imageDimensions = 90;
+                let img = new Image();
+
+                img.crossOrigin = 'anonymous';
+                img.style.display = 'none';
+                img.src = url;
+
+
+                img.onload = function() {
+                    img.width = imageDimensions;
+                    img.height = imageDimensions;
+
+                    let canvas = document.createElement('canvas');
+                    let context = canvas.getContext('2d');
+
+                    context.drawImage(img, 0, 0);
+                        
+                    let pixels = context.getImageData(x, y, img.width, img.height);
+                    let data = pixels.data;
+
+                    let grayscalePixelValuesSum = 0;
+                    let rowCounter = 0;
+
+                    data.forEach((rgba, index) => {
+                        if (index % (img.width * 4) === 0 && index !== 0) {
+                            // Matrix solution: grayscaleData.push([]);
+                            // Linear solution: grayscaleData.push(1);
+                            // Object solution: grayscaleData[`${index}`] = 0;
+                            grayscaleData.push(1);
+                            rowCounter++;
+                        }
+
+                        if (index % 4 === 0) {
+                            // This actually removes the Alpha (A) value from RGBA and converts other colors evenly to their grayscale equivalent then puts that value between 0 and 1 or to black and white with 0 or 1
+                            let grayscalePixelValue = Number((Math.round(grayscalePixelValuesSum / 3) / 255).toFixed(0)); // value in toFixed: black and white: 0, grayscale: 2
+
+                            // Matrix solution: grayscaleData[rowCounter].push(grayscalePixelValue);
+                            // Linear solution: grayscaleData.push(grayscalePixelValue);
+                            // Object solution: grayscaleData[`${index}`] = grayscalePixelValue;
+                            grayscaleData.push(grayscalePixelValue);
+
+                            grayscalePixelValuesSum = 0;
+                        } else {
+                            grayscalePixelValuesSum += rgba;
+                        }
+                    })
+
+                    return resolve(grayscaleData);
+                };
+            })
+        }
+
+
+        /* Comment the code below if you are using the pretrainedModelJSON */
+        for (let i = 1; i <= numberOfImages; i++) {
+            getGrayscaleImageMatrix(`./images/cats/cat_${i}.jpg`, 0, 0).then(grayscaleData => catsTrainableData.push({input: grayscaleData, output: [0]})); // Object solution: {cat: 1}
+            getGrayscaleImageMatrix(`./images/dogs/dog_${i}.jpg`, 0, 0).then(grayscaleData => dogsTrainableData.push({input: grayscaleData, output: [1]})); // Object solution: {dog: 1}
+        }
+ 
+        /* Comment the code below if you are using the pretrainedModelJSON */
+        let checkDataInterval = setInterval(() => {
+            console.log('Processing image data...');
+
+            if (catsTrainableData.length === numberOfImages && dogsTrainableData.length === numberOfImages) {
+                console.log('Image data is now prepared for training!');
+                console.log('The training begins right now...');
+     
+                let trainData = network.train([...catsTrainableData, ...dogsTrainableData], trainingOptions);
+
+                console.log(trainData);
+
+                const output = network.run(catsTrainableData[0].input);
+
+                console.log('Tested network output for cat image: ', output);
+
+  
+
+                let input = document.getElementById('image-file-input');
+                if (input) {
+                    input.removeAttribute('disabled');
+                }
+
+                trainedModel = network.toJSON();
+
+                clearInterval(checkDataInterval);
+            }
+        }, 500);
+
+        // Never comment out whole code below this line
+        let status = document.getElementById('status');
+        if (status) {
+            status.innerHTML = 'ready';
+        }
+
+        let input = document.getElementById('image-file-input');
+        if (input) {
+            input.removeAttribute('disabled');
+        }
+
+
+        function encodeToBase64(file) { 
+            return new Promise((resolve, reject) => {
+                let reader = new FileReader();
+                reader.readAsBinaryString(file);
+                reader.onload = () => { 
+                    resolve(typeof reader.result === 'string' ? btoa(reader.result) : reader.result);
+                } 
+                reader.onerror = reject;
+            })
+        }
+
+        const handleImageFileInput = async (event) => {
+            if (event.currentTarget.files[0]) {
+                let spaceForAnswer = document.getElementById('answer');
+                let imageFileInput = document.getElementById('image-file-input');
+                let uploadedImage = document.getElementById('uploaded-image');
+
+                let encodedFile = await encodeToBase64(event.currentTarget.files[0]);
+
+                uploadedImage.src = `data:image/png;base64, ${encodedFile}`;
+
+                let imageTransformedToMatrix = await getGrayscaleImageMatrix(`data:image/png;base64, ${encodedFile}`, 0, 0).then(grayscaleData => grayscaleData);
+
+                let output = network.run(imageTransformedToMatrix);
+
+                if (output) {
+                    spaceForAnswer.innerHTML = output[0] < 0.5  ? `Cat ~ ${Number(100 - output[0] * 100).toFixed(0)}% ~` : `Dog ~ ${Number(output[0] * 100).toFixed(0)}% ~`;
+                }
+            }
+        }
+    </script>
+</html>

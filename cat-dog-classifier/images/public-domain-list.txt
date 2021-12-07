@@ -1,0 +1,105 @@
+All images used for training this neural network are in public domain.
+
+CATS:
+* cat_1: Photograph of pet cat taken by Tokugawa Yoshinobu in 19th century
+* cat_2: S.L. Upham & Fowler in 1875
+* cat_3: Cat with collar and bell detail, The Widow (Boston Public Library)
+* cat_4: Charles Verlat - Study of a black and white cat
+* cat_5: Bruno Liljefors - Katt med gröngöling 1890
+* cat_6: Bruno Liljefors - Sleeping Jeppe
+* cat_7: Henriette Ronner-Knip Katze 1897
+* cat_8: Henriëtte Ronner-Knip (1821-1909), Katje, 1896
+* cat_9: The Sphere, 1910
+* cat_10: https://commons.wikimedia.org/wiki/File:Black_Cat_Nala.jpg
+* cat_11: https://commons.wikimedia.org/wiki/File:Cat_in_the_garden.jpg
+* cat_12: https://commons.wikimedia.org/wiki/File:Cerny_dabel.jpg
+* cat_13: https://commons.wikimedia.org/wiki/File:6-year_old_tortoise_shell_cat.jpg
+* cat_14: Ein wahres Probiertes und Pracktisches geschriebenes Feuerbuch - 1607 - Folder Shakespeare Library Vb311
+* cat_15: https://commons.wikimedia.org/wiki/File:WikiCat.jpg
+* cat_16: https://commons.wikimedia.org/wiki/File:Cheshire_Cat_appearing_(detail).jpg
+* cat_17: https://commons.wikimedia.org/wiki/File:Domestic_cat_2011_G02.jpg
+* cat_18: https://commons.wikimedia.org/wiki/File:Cats_in_t1302Cats_in_the_Philippines_17.jpg
+* cat_19: https://commons.wikimedia.org/wiki/File:Cat_(Unsplash).jpg
+* cat_20: https://commons.wikimedia.org/wiki/File:BengalCat_Stella.jpg
+* cat_21: https://commons.wikimedia.org/wiki/File:Black_white_cat_on_fence.jpg
+* cat_22: https://commons.wikimedia.org/wiki/File:Albino_Siamese_cat_%27trixie%27.jpg
+* cat_23: https://commons.wikimedia.org/wiki/File:Siamese_cat_2.jpg
+* cat_24: https://commons.wikimedia.org/wiki/File:3943Cats_Fish_of_the_Philippines_11.jpg
+* cat_25: https://commons.wikimedia.org/wiki/File:Bengal_cat.JPG
+* cat_26: https://commons.wikimedia.org/wiki/File:Norwegian_Forest_Cat_in_snow.jpg
+* cat_27: https://commons.wikimedia.org/wiki/File:Gabi_the_cat,_eating.jpg
+* cat_28: https://commons.wikimedia.org/wiki/File:Cat_and_mouse_(Unsplash).jpg
+* cat_29: https://commons.wikimedia.org/wiki/File:Cat_in_Zanzibar.jpg
+* cat_30: https://commons.wikimedia.org/wiki/File:Cat_public_domain_dedication_image_0002.jpg
+* cat_31: https://commons.wikimedia.org/wiki/File:Cat_public_domain_dedication_image_0011.jpg
+* cat_32: https://commons.wikimedia.org/wiki/File:Yawning_cat.jpg
+* cat_33: https://commons.wikimedia.org/wiki/File:Curly_Cat.jpg
+* cat_34: https://commons.wikimedia.org/wiki/File:Cat_-_Singapore-20090109.jpg
+* cat_35: https://commons.wikimedia.org/wiki/File:Savannah_Cat_portrait.jpg
+* cat_36: https://commons.wikimedia.org/wiki/File:Tamila_the_lilac_tabby_Peterbald_cat.jpg
+* cat_37: https://commons.wikimedia.org/wiki/File:Cat_Matahari.jpg
+* cat_38: https://upload.wikimedia.org/wikipedia/commons/0/08/Romeo_the_lilac_tabby_Peterbald_cat.jpg
+* cat_39: https://commons.wikimedia.org/wiki/File:Odd-eyed_cat_(1).jpg
+* cat_40: https://commons.wikimedia.org/wiki/File:Aleksandr_van_Song_de_Chine_cat.jpg
+* cat_41: https://commons.wikimedia.org/wiki/File:A_U.S._Marine_holds_a_kitten_at_the_Carteret_County_Humane_Society_after_cleaning_its_cage_in_Newport,_N.C.,_Jan._19,_2013_130119-M-DB277-111.jpg
+* cat_42: https://commons.wikimedia.org/wiki/File:Cat_friends.jpg
+* cat_43: https://commons.wikimedia.org/wiki/File:Cat_greeting_its_owner_(Unsplash).jpg
+* cat_44: https://commons.wikimedia.org/wiki/File:Cat_resting_on_a_couch_(Unsplash).jpg
+* cat_45: https://commons.wikimedia.org/wiki/File:Chat_c%C3%A9venol.JPG
+* cat_46: https://commons.wikimedia.org/wiki/File:Kitten_5.jpg
+* cat_47: https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg
+* cat_48: https://commons.wikimedia.org/wiki/File:Une_des_chattes_tigr%C3%A9es.JPG
+* cat_49: https://commons.wikimedia.org/wiki/File:Une_robe_tigr%C3%A9e_att%C3%A9nu%C3%A9e.JPG
+* cat_50: https://commons.wikimedia.org/wiki/File:Black_and_white_kitten_biting_lure_from_back.jpg
+
+DOGS:
+* dog_1: https://commons.wikimedia.org/wiki/File:20110425_German_Shepherd_Dog_8505.jpg
+* dog_2: https://commons.wikimedia.org/wiki/File:Kintamani_dog_white.jpg
+* dog_3: https://commons.wikimedia.org/wiki/File:Sled_dog_on_Svalbard_with_heterochromia.jpg
+* dog_4: https://commons.wikimedia.org/wiki/File:The_Esquimaux_Dog.jpg
+* dog_5: https://commons.wikimedia.org/wiki/File:Stray_German_Shepherd_Dog.jpg
+* dog_6: https://commons.wikimedia.org/wiki/File:Heterochromia_dog,_Struga.jpg
+* dog_7: https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Wolbeck,_Wolbecker_Tiergarten,_Hund_--_2014_--_7130.jpg
+* dog_8: https://commons.wikimedia.org/wiki/File:German_Shepherd_Dog,_Puppy,_5_months,_Portrait.jpg
+* dog_9: https://commons.wikimedia.org/wiki/File:Rocky_m%C3%A9g_mindig_b%C3%BCd%C3%B6s.jpg
+* dog_10: https://commons.wikimedia.org/wiki/File:Irish_setter_-_%C4%B0rlanda_setteri,_Adana_2016-10-30_02-1.jpg
+* dog_11: https://commons.wikimedia.org/wiki/File:Rocky_m%C3%A9g_mindig_b%C3%BCd%C3%B6s.jpg
+* dog_12: https://commons.wikimedia.org/wiki/File:Keeshond_Sibirian_Husky_crossbreed_puppy.jpg
+* dog_13: https://commons.wikimedia.org/wiki/File:An_Indian_Street_Dog.jpg
+* dog_14: https://commons.wikimedia.org/wiki/File:DogBrown.jpg
+* dog_15: https://commons.wikimedia.org/wiki/File:Dog_park_(Parque_La_Carolina)_Quito,_Ecuador._a_dog_walking,_hanging_out.jpg
+* dog_16: https://commons.wikimedia.org/wiki/File:Luxury_dog_collar.jpg
+* dog_17: https://commons.wikimedia.org/wiki/File:Canadian_Inuit_Dog.jpg
+* dog_18: https://commons.wikimedia.org/wiki/File:Head_of_Pyrenean_Mountain_Dog.jpg
+* dog_19: https://commons.wikimedia.org/wiki/File:Dog_.jpg
+* dog_20: https://commons.wikimedia.org/wiki/File:Iberian_Hunting_Dog_02.jpg
+* dog_21: https://commons.wikimedia.org/wiki/File:Dog_Pool.jpg
+* dog_22: https://commons.wikimedia.org/wiki/File:Peteca_dog.jpg
+* dog_23: https://commons.wikimedia.org/wiki/File:My_dog.jpg
+* dog_24: https://commons.wikimedia.org/wiki/File:Bernese_Mountain_DOg2.jpg
+* dog_25: https://commons.wikimedia.org/wiki/File:%22Boxer_dog%22_stand.jpg
+* dog_26: https://commons.wikimedia.org/wiki/File:Male_German_Shepherd_Dog.jpg
+* dog_27: https://commons.wikimedia.org/wiki/File:Taka_Shiba.jpg
+* dog_28: https://commons.wikimedia.org/wiki/File:Shiba-Yuki.jpg
+* dog_29: https://commons.wikimedia.org/wiki/File:Shiba_Inu.jpg
+* dog_30: https://commons.wikimedia.org/wiki/File:Shiba_puppy_female_100_days_old.jpg
+* dog_31: https://commons.wikimedia.org/wiki/File:Siberian-husky-1291343_1920.jpg
+* dog_32: https://commons.wikimedia.org/wiki/File:Sibirischer_Husky_(Doug).jpg
+* dog_33: https://commons.wikimedia.org/wiki/File:Husky_Siberiano_Acostado.jpg
+* dog_34: "The Greyhound" by Joseph Crawhall, c. 1884
+* dog_35: Jacques-Laurent Agasse - Dash, a setter in a wooded landscape
+* dog_36: Heywood Hardy - Hardy-98372 - The White Greyhound - 1880
+* dog_37: https://commons.wikimedia.org/wiki/File:Carl_Reichert_-_A_Questioning_Look.jpg
+* dog_38: https://commons.wikimedia.org/wiki/File:Alice_Maud_Bryant_1875-1910_Cheroot.jpg
+* dog_39: https://commons.wikimedia.org/wiki/File:Dog-sitting-pretty.jpg
+* dog_40: https://commons.wikimedia.org/wiki/File:Dog-sitting.jpg
+* dog_41: https://commons.wikimedia.org/wiki/File:Dog123454.jpg
+* dog_42: https://commons.wikimedia.org/wiki/File:WhiteTanChihuahua.jpg
+* dog_43: https://commons.wikimedia.org/wiki/File:Basset-hound_duo.jpg
+* dog_44: https://commons.wikimedia.org/wiki/File:Male_basset_hound.jpg
+* dog_45: https://commons.wikimedia.org/wiki/File:Shylo_Tarot_Life%27s_A_Dance_(purebred_Afghan_hound,_1996).jpg
+* dog_46: https://commons.wikimedia.org/wiki/File:Caesaria.jpg
+* dog_47: https://commons.wikimedia.org/wiki/File:Mikey_the_miniature_schnauzer_on_a_leash.jpg
+* dog_48: https://commons.wikimedia.org/wiki/File:Miniature_Schnauzer_with_goatee.jpg
+* dog_49: https://commons.wikimedia.org/wiki/File:Pudel_Grossschwarz.jpg
+* dog_50: https://commons.wikimedia.org/wiki/File:Pudel_KleinSable.jpg
