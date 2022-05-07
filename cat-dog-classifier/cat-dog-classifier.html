@@ -102,7 +102,7 @@
 
     <script type="text/javascript" src="https://unpkg.com/brain.js"></script>
     <!-- Uncomment the script below to use the pretrainedModel -->
-    <!-- <script type="text/javascript" src="./pretrained-model.js"></script> -->
+    <script type="text/javascript" src="./pretrained-model.js"></script>
     <script type="text/javascript">
         const numberOfImages = 50;
 
@@ -125,8 +125,11 @@
         let dogsTrainableData = [];
         let trainedModel;
 
-        /* Uncomment to use the pretrainedModel */
-        // network.fromJSON(pretrainedModelJSON);
+        /*
+        * Uncomment to use the pretrainedModel 
+        */
+       
+        network.fromJSON(pretrainedModelJSON);
 
 
         function getGrayscaleImageMatrix(url, x, y) {
@@ -191,40 +194,46 @@
         }
 
 
-        /* Comment the code below if you are using the pretrainedModelJSON */
-        for (let i = 1; i <= numberOfImages; i++) {
-            getGrayscaleImageMatrix(`./images/cats/cat_${i}.jpg`, 0, 0).then(grayscaleData => catsTrainableData.push({input: grayscaleData, output: [0]})); // Object solution: {cat: 1}
-            getGrayscaleImageMatrix(`./images/dogs/dog_${i}.jpg`, 0, 0).then(grayscaleData => dogsTrainableData.push({input: grayscaleData, output: [1]})); // Object solution: {dog: 1}
-        }
+        /*
+        * Comment the code below if you are using the pretrainedModelJSON 
+        */
+
+        // for (let i = 1; i <= numberOfImages; i++) {
+        //     getGrayscaleImageMatrix(`./images/cats/cat_${i}.jpg`, 0, 0).then(grayscaleData => catsTrainableData.push({input: grayscaleData, output: [0]})); // Object solution: {cat: 1}
+        //     getGrayscaleImageMatrix(`./images/dogs/dog_${i}.jpg`, 0, 0).then(grayscaleData => dogsTrainableData.push({input: grayscaleData, output: [1]})); // Object solution: {dog: 1}
+        // }
  
-        /* Comment the code below if you are using the pretrainedModelJSON */
-        let checkDataInterval = setInterval(() => {
-            console.log('Processing image data...');
+        /* 
+        * Comment the code below if you are using the pretrainedModelJSON 
+        */
 
-            if (catsTrainableData.length === numberOfImages && dogsTrainableData.length === numberOfImages) {
-                console.log('Image data is now prepared for training!');
-                console.log('The training begins right now...');
+        // let checkDataInterval = setInterval(() => {
+        //     console.log('Processing image data...');
+
+        //     if (catsTrainableData.length === numberOfImages && dogsTrainableData.length === numberOfImages) {
+        //         console.log('Image data is now prepared for training!');
+        //         console.log('The training begins right now...');
      
-                let trainData = network.train([...catsTrainableData, ...dogsTrainableData], trainingOptions);
+        //         let trainData = network.train([...catsTrainableData, ...dogsTrainableData], trainingOptions);
 
-                console.log(trainData);
+        //         console.log(trainData);
 
-                const output = network.run(catsTrainableData[0].input);
+        //         const output = network.run(catsTrainableData[0].input);
 
-                console.log('Tested network output for cat image: ', output);
+        //         console.log('Tested network output for cat image: ', output);
 
   
 
-                let input = document.getElementById('image-file-input');
-                if (input) {
-                    input.removeAttribute('disabled');
-                }
+        //         let input = document.getElementById('image-file-input');
+        //         if (input) {
+        //             input.removeAttribute('disabled');
+        //         }
 
-                trainedModel = network.toJSON();
+        //         trainedModel = network.toJSON();
 
-                clearInterval(checkDataInterval);
-            }
-        }, 500);
+        //         clearInterval(checkDataInterval);
+        //     }
+        // }, 500);
 
         // Never comment out whole code below this line
         let status = document.getElementById('status');
