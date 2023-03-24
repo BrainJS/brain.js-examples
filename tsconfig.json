@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "declarationMap": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    // "noEmit": true,
+    "noEmitOnError": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2018",
+    "lib": ["es2019", "dom"],
+    "resolveJsonModule": true,
+  },
+  "exclude": ["node_modules", "**/*.json", "dist", "examples", "__coverage__"]
+}

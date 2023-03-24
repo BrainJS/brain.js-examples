@@ -1,0 +1,29 @@
+.container {
+  margin-top: 134px;
+  text-align: center;
+}
+
+.container-rate {
+  margin-bottom: 18px;
+}
+
+.shirt-image {
+  width: 180px;
+}
+
+.rating-shirt {
+  padding-bottom: 30px;
+}
+
+.suggested-shirts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto auto;
+}
+
+.suggested-shirt {
+  padding-right: 15px;
+  padding-top: 30px;
+  width: 180px;
+  display: inline-block;
+}

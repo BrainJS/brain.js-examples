@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.20",
+    "gpu.js": "^2.16.0",
+    "train-stream": "^1.0.4"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "serve": "webpack-dev-server --config webpack.config.dev.js --open",
+    "prepublish-gh-pages": "webpack --config webpack.config.gh-pages.js",
+    "publish-gh-pages": "npm run prepublish-gh-pages; gh-pages -d .gh-pages",
+    "lint": "run-p lint:**",
+    "lint:eslint": "eslint --fix --ext .js,.ts src",
+    "lint:typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.6",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.3.1",
+    "typescript": "^5.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
